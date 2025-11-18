@@ -12,10 +12,27 @@ from pydantic import BaseModel, Field, validator
 from typing import List, Optional, Dict, Any
 import sqlite3
 from datetime import datetime, timedelta
-from jose import jwt
-from passlib.context import CryptContext
-import redis
 from functools import wraps
+
+# Optional dependencies for authentication (not needed for basic deployment)
+try:
+    from jose import jwt
+    HAS_JWT = True
+except ImportError:
+    HAS_JWT = False
+
+try:
+    from passlib.context import CryptContext
+    HAS_PASSLIB = True
+except ImportError:
+    HAS_PASSLIB = False
+
+try:
+    import redis
+    HAS_REDIS = True
+except ImportError:
+    HAS_REDIS = False
+    redis = None
 import logging
 from enum import Enum
 import os
@@ -52,17 +69,26 @@ app.add_middleware(
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Security
+# Security (optional - only if dependencies are available)
 security = HTTPBearer()
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+if HAS_PASSLIB:
+    pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+else:
+    pwd_context = None
+    logger.warning("Passlib not available - authentication disabled")
 
-# Redis for rate limiting and caching
-try:
-    redis_client = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
-    redis_client.ping()
-except:
-    redis_client = None
-    logger.warning("Redis not available - caching and rate limiting disabled")
+# Redis for rate limiting and caching (optional)
+redis_client = None
+if HAS_REDIS and redis is not None:
+    try:
+        redis_client = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
+        redis_client.ping()
+        logger.info("Redis connected successfully")
+    except Exception as e:
+        redis_client = None
+        logger.warning(f"Redis not available - caching and rate limiting disabled: {e}")
+else:
+    logger.warning("Redis module not installed - caching and rate limiting disabled")
 
 
 # ==================== MODELS ====================
