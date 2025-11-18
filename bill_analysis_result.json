@@ -1,0 +1,65 @@
+{
+  "bill_number": "SB-12345",
+  "restaurant_name": "SARAVANA BHAVAN",
+  "date": "16-Nov-2025",
+  "items": [
+    {
+      "item_name": "Masala Dosa",
+      "original_name": "Masala Dosa x2",
+      "quantity": 2.0,
+      "unit_price": 60.0,
+      "total_price": 120.0,
+      "hsn_code": null,
+      "gst_rate": 5.0,
+      "cgst": 3.0,
+      "sgst": 3.0,
+      "category": "Restaurant services"
+    },
+    {
+      "item_name": "Idli",
+      "original_name": "Idli (4 pcs)",
+      "quantity": 1.0,
+      "unit_price": 50.0,
+      "total_price": 50.0,
+      "hsn_code": null,
+      "gst_rate": 5.0,
+      "cgst": 1.25,
+      "sgst": 1.25,
+      "category": "Restaurant services"
+    },
+    {
+      "item_name": "Parotta",
+      "original_name": "Parotta x3",
+      "quantity": 3.0,
+      "unit_price": 20.0,
+      "total_price": 60.0,
+      "hsn_code": null,
+      "gst_rate": 0.0,
+      "cgst": 0.0,
+      "sgst": 0.0,
+      "category": "Food items (fresh)"
+    }
+  ],
+  "subtotal": 230.0,
+  "bill_charges": {
+    "total_gst": 11.5,
+    "cgst": 5.75,
+    "sgst": 5.75,
+    "grand_total": 241.5
+  },
+  "correct_calculation": {
+    "total_gst": 8.5,
+    "cgst": 4.25,
+    "sgst": 4.25,
+    "grand_total": 238.5
+  },
+  "discrepancy": {
+    "found": true,
+    "amount": 3.0,
+    "details": [
+      "Bill charged ₹11.5 GST, but should be ₹8.5",
+      "Overcharged by ₹3.0",
+      "'Parotta' should have 0% GST (charged on bill)"
+    ]
+  }
+}

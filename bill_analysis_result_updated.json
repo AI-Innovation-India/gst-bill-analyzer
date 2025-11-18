@@ -1,0 +1,58 @@
+{
+  "bill_number": "48346",
+  "restaurant_name": "JAZZ DATES AND NUTS",
+  "date": "17/11/25",
+  "gstin": "33AKMPK0109L1ZA",
+  "items": [
+    {
+      "item_name": "Cashew Salted",
+      "original_name": "CASHEW SALTED",
+      "quantity": 0.25,
+      "unit_price": 1800.0,
+      "total_price": 450.0,
+      "hsn_code": "08013200",
+      "gst_rate": 5.0,
+      "cgst": 11.25,
+      "sgst": 11.25,
+      "category": "Dry fruits and nuts"
+    },
+    {
+      "item_name": "Mixed Bites",
+      "original_name": "MIXED BITES",
+      "quantity": 0.204,
+      "unit_price": 1600.0,
+      "total_price": 326.4,
+      "hsn_code": "08013200",
+      "gst_rate": 5.0,
+      "cgst": 8.16,
+      "sgst": 8.16,
+      "category": "Dry fruits and nuts"
+    }
+  ],
+  "gross_amount": 776.4,
+  "discount": 225.0,
+  "subtotal": 525.14,
+  "bill_charges": {
+    "total_gst": 26.26,
+    "cgst": 13.13,
+    "sgst": 13.13,
+    "grand_total": 551.0
+  },
+  "correct_calculation": {
+    "total_gst": 26.26,
+    "cgst": 13.13,
+    "sgst": 13.13,
+    "grand_total": 551.4
+  },
+  "discrepancy": {
+    "found": false,
+    "amount": 0.0,
+    "details": [
+      "Discount applied: ₹225.00 (29.0%)"
+    ]
+  },
+  "confidence_score": 0.95,
+  "warnings": [
+    "ℹ️ Minor rounding difference: Gross - Discount = ₹551.40, Bill shows ₹525.14"
+  ]
+}

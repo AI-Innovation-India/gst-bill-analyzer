@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Environment variables
+.env
+*.env
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# API Keys
+*api_key*
+*secret*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# PDF test files (optional - keep Bill.pdf for testing)
+# *.pdf
+
+# Node modules (if using React build)
+node_modules/
+ui_code/node_modules/
+ui_code/build/
+ui_code/.env
+
+# Cache
+.cache/
+.pytest_cache/

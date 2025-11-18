@@ -1,0 +1,47 @@
+hsn_code,sac_code,item_name,item_category,description,gst_rate,cgst_rate,sgst_rate,igst_rate,previous_rate,effective_date,chapter,exemptions,conditions,last_updated,data_hash
+,,"Hair Oil, Shampoo, Toothpaste, Toilet Soap Bar, Tooth Brushes, Shaving Cream",Daily Essentials,,5.0,2.5,2.5,5.0,18.0,2025-09-22,,,,2025-11-16T16:45:38.671413,88b47f832c23e8ff5b9f16fcbd6c86c4
+,,"Butter, Ghee, Cheese & Dairy Spreads","Butter, Ghee, Cheese & Dairy Spreads",,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,2d1412667345acb36ce66cab6571e4c7
+,,"Pre-packaged Namkeens, Bhujia & Mixtures","Pre-packaged Namkeens, Bhujia & Mixtures",,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,47ead358d28a35d179f589ea0d46aabb
+,,Utensils,Utensils,,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,0f9933747fcf52e1b1d9c2add8557eba
+,,"Feeding Bottles, Napkins for Babies & Clinical Diapers","Feeding Bottles, Napkins for Babies & Clinical Diapers",,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,8d8589d281d7c90ad6967d5a3a89bf56
+,,Sewing Machines & Parts,Sewing Machines & Parts,,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,b46fada21568cbd19539b17f03f62278
+,,Tractor Tyres & Parts,Uplifting Farmers & Agriculture,,5.0,2.5,2.5,5.0,18.0,2025-09-22,,,,2025-11-16T16:45:38.675864,0e932925421950a3dd747c0a206ef0dc
+,,Tractors,Tractors,,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,60e2deda530476cf213f699d8adfaa96
+,,Specified 12 bio-pesticides and micro-nutrients,Specified 12 bio-pesticides and micro-nutrients,,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,595b81f5fd3b454f6d57658a185c9699
+,,Drip Irrigation System & Sprinklers,Drip Irrigation System & Sprinklers,,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,95d46ca184edc193645e18c63862cfec
+,,"Agricultural, Horticultural or Forestry Machines (Soil Preparation, Cultivation, etc.)","Agricultural, Horticultural or Forestry Machines (Soil Preparation, Cultivation, etc.)",,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,bb360f560c4f847f71d1b710398bdc1b
+,,Thermometer,Thermometer,,5.0,2.5,2.5,5.0,18.0,2025-09-22,,,,2025-11-16T16:45:38.675864,2f80eca6d4d8b688b1bb5e913e3a17be
+,,Medical Grade Oxygen,Medical Grade Oxygen,,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,f6321f544556b6bc05dd0d28a38f03c1
+,,All Diagnostic Kits & Reagents,All Diagnostic Kits & Reagents,,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,d6bb5be5d8b0546df4de53b884500ef0
+,,Glucometer & Test Strips,Glucometer & Test Strips,,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,f6c0e0190c0b5b6d4addc93a99e98f07
+,,Corrective Spectacles,Corrective Spectacles,,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,b272fb2df9fc323cd3897336f73f01d8
+,,"Drugs and medicines such as Faricimab, Pertuzumab, Fluticasone Furoate + Umeclidinium + Vilanterol FF/UMEC/VI, Ocrelizumab, and Brentuximab Vedotin","Drugs and medicines such as Faricimab, Pertuzumab, Fluticasone Furoate + Umeclidinium + Vilanterol FF/UMEC/VI, Ocrelizumab, and Brentuximab Vedotin",,5.0,2.5,2.5,5.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.675864,64f06fd5fd6242ff6244053c43f64feb
+,,"Petrol & Petrol Hybrid, LPG, CNG Cars (≤1200cc & ≤4000mm)",Automobiles,,18.0,9.0,9.0,18.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.675864,023eab239f4d2172830e132258f859d5
+,,Diesel & Diesel Hybrid Cars (≤1500cc & ≤4000mm),Diesel & Diesel Hybrid Cars (≤1500cc & ≤4000mm),,18.0,9.0,9.0,18.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.675864,d0f967018a1b288f3e62dd4218bf2968
+,,Three wheelers,Three wheelers,,18.0,9.0,9.0,18.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.675864,618d8588b4833d13c2a530993b963717
+,,Motorcycles (≤350cc),Motorcycles (≤350cc),,18.0,9.0,9.0,18.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.675864,c40904759b17dda83303d1e5e635cfe1
+,,Motor Vehicles for the transport of goods,Motor Vehicles for the transport of goods,,18.0,9.0,9.0,18.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.675864,dd9d31d5f295cd29c567d69014ad83b6
+,,Air Conditioners,Electronic Appliances,,18.0,9.0,9.0,18.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.675864,0033b0e4d46fb2d08df90a148953ebcd
+,,"Television (above 32"") (inc. LED & LCD TVs)","Television (above 32"") (inc. LED & LCD TVs)",,18.0,9.0,9.0,18.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.675864,6951314be75323d383470abc20370f2b
+,,Monitors & Projectors,Monitors & Projectors,,18.0,9.0,9.0,18.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.675864,9e0a7e10f8a8cf2827cf2ec563f21024
+,,Dish Washing Machines,Dish Washing Machines,,18.0,9.0,9.0,18.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.675864,df88ee420b72282526f2ed7336e6d6de
+,,"Coal, lignite, peat",Mining,"Coal, lignite, peat",18.0,9.0,9.0,18.0,5.0,2025-09-22,,,,2025-11-16T16:45:38.675864,da641440588e0719471b7f9f07014b01
+,,tobacco/ pan masala*,Sin goods,tobacco/ pan masala*,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,4adf5131217ca26de603ace4a99d6539
+,,Aerated waters,Aerated waters,Aerated waters,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,d029406abf3e8f9af9d577da67759d73
+,,Caffeinated beverages,Caffeinated beverages,Caffeinated beverages,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,5c226f7541798032a2f0ef773188121b
+,,Carbonated beverages of fruit drinks / with fruit juice,Carbonated beverages of fruit drinks / with fruit juice,Carbonated beverages of fruit drinks / with fruit juice,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,3217bebe82a4b73e6f7d1320db0d412e
+,,Other non‑alcoholic beverages,Other non‑alcoholic beverages,Other non‑alcoholic beverages,40.0,20.0,20.0,40.0,18.0,2025-09-22,,,,2025-11-16T16:45:38.677870,8dd9559bdd59081e8135e57033abf337
+,,Motor cars and larger hybrids (beyond small‑car thresholds),Motor cars and larger hybrids (beyond small‑car thresholds),Motor cars and larger hybrids (beyond small‑car thresholds),40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,e95f6bb3d21840e550a1d12bf1402d4b
+,,Motorcycles exceeding 350cc,Motorcycles exceeding 350cc,Motorcycles exceeding 350cc,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,80b8b46c9e65cffa740ff8354c023099
+,,Aircraft for personal use,Aircraft for personal use,Aircraft for personal use,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,547209667412ae31853daa5215a21b67
+,,Yachts and vessels for pleasure/sports,Yachts and vessels for pleasure/sports,Yachts and vessels for pleasure/sports,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,be40cea1d94fac7753d90d31470afcba
+,,Smoking pipes and cigarette/cigar holders,Smoking pipes and cigarette/cigar holders,Smoking pipes and cigarette/cigar holders,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,0b2d538299f6b0382d64b8bfbf08f507
+,,Revolvers & pistols,Revolvers & pistols,Revolvers & pistols,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,1d5baedfd4e530dd84fc261048935389
+,,"Admission to casinos, race clubs, and sporting events like IPL","Admission to casinos, race clubs, and sporting events like IPL","Admission to casinos, race clubs, and sporting events like IPL",40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,9ae52661c2390d69435ccbd6a59115df
+,,Licensing of bookmakers by race clubs,Licensing of bookmakers by race clubs,Licensing of bookmakers by race clubs,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,b6d8c6e25e50929bd5481b20278733d8
+,,"Specified actionable claims (betting, casinos, gambling, horse racing, lottery, online money gaming)","Specified actionable claims (betting, casinos, gambling, horse racing, lottery, online money gaming)","Specified actionable claims (betting, casinos, gambling, horse racing, lottery, online money gaming)",40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,504a3f4939035d5623fc95090999b696
+,,Leasing/rental without operator of goods attracting 40% GST,Leasing/rental without operator of goods attracting 40% GST,Leasing/rental without operator of goods attracting 40% GST,40.0,20.0,20.0,40.0,28.0,2025-09-22,,,,2025-11-16T16:45:38.677870,832daa6b70f311b06f1b936b1b347cdb
+,,Dissolving‑grade chemical wood pulp,Paper sector,Dissolving‑grade chemical wood pulp,18.0,9.0,9.0,18.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.677870,56f85d6b9e6a82933d7f11c54b82aa80
+,,"Various papers/paperboards, other than exercise‑book paper","Various papers/paperboards, other than exercise‑book paper","Various papers/paperboards, other than exercise‑book paper",18.0,9.0,9.0,18.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.677870,5bef56cb2b7c0251fd1c1dd169b33376
+,,"Apparel/Made‑ups > Rs 2,500 per piece",Textiles,"Apparel/Made‑ups > Rs 2,500 per piece",18.0,9.0,9.0,18.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.677870,f0105c02b27e70766a04c095d7a1b709
+,,"Quilted/cotton quilts and quilted products more than Rs.2,500 per piece","Quilted/cotton quilts and quilted products more than Rs.2,500 per piece","Quilted/cotton quilts and quilted products more than Rs.2,500 per piece",18.0,9.0,9.0,18.0,12.0,2025-09-22,,,,2025-11-16T16:45:38.677870,ba63a2b0b7afb18f4b77f090e498c663

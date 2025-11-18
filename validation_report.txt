@@ -1,0 +1,33 @@
+================================================================================
+GST DATA VALIDATION REPORT
+================================================================================
+Generated: 2025-11-16T16:45:12.971067
+Database: gst_data.db
+Health Score: 87.5/100
+
+Summary: 7 PASSED, 0 WARNED, 1 FAILED
+
+Statistics:
+  Total Items: 0
+  Unique HSN Codes: 0
+  Categories: 0
+
+Detailed Checks:
+--------------------------------------------------------------------------------
+✓ Database Connectivity: PASS
+    Database accessible with 0 items
+
+✓ Data Completeness: PASS
+
+✓ Hsn Code Validity: PASS
+
+✓ Rate Validity: PASS
+
+✓ Duplicates: PASS
+
+✓ Category Consistency: PASS
+
+✗ Data Freshness: FAIL
+    No update timestamp
+
+✓ Mathematical Consistency: PASS
