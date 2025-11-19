@@ -345,22 +345,22 @@ def populate_hsn_codes():
         try:
             cursor.execute("""
                 INSERT OR REPLACE INTO gst_items
-                (hsn_code, sac_code, item_name, item_category, description,
-                 gst_rate, cgst_rate, sgst_rate, igst_rate,
-                 effective_date, last_updated)
+                (hsn_code, sac_code, item_name, item_category,
+                 gst_rate, cgst_rate, sgst_rate, igst_rate, cess_rate,
+                 effective_from, remarks)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 item.get('hsn_code'),
                 item.get('sac_code'),
                 item['item_name'],
-                item['item_category'],
-                item.get('description', ''),
+                item.get('item_category', ''),
                 item['gst_rate'],
-                item['cgst_rate'],
-                item['sgst_rate'],
-                item['igst_rate'],
+                item.get('cgst_rate', item['gst_rate'] / 2),
+                item.get('sgst_rate', item['gst_rate'] / 2),
+                item.get('igst_rate', item['gst_rate']),
+                item.get('cess_rate', 0),
                 '2025-01-01',
-                now
+                item.get('remarks', '')
             ))
             count += 1
             print(f"[OK] Added: {item['item_name']} (HSN: {item.get('hsn_code', 'N/A')}, SAC: {item.get('sac_code', 'N/A')})")
