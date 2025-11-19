@@ -12,6 +12,28 @@ def populate_hsn_codes():
     conn = sqlite3.connect('gst_data.db')
     cursor = conn.cursor()
 
+    # Create table if it doesn't exist (for Render deployment)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS gst_items (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            hsn_code TEXT,
+            sac_code TEXT,
+            item_name TEXT NOT NULL,
+            item_category TEXT,
+            gst_rate REAL NOT NULL,
+            cgst_rate REAL,
+            sgst_rate REAL,
+            igst_rate REAL,
+            cess_rate REAL DEFAULT 0,
+            effective_from TEXT,
+            remarks TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(hsn_code, sac_code, item_name)
+        )
+    """)
+    conn.commit()
+
     # Common Indian items with proper HSN/SAC codes
     items_with_codes = [
         # Food items (5% GST)
