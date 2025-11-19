@@ -1,0 +1,53 @@
+{
+  "db_path": "gst_data.db",
+  "previous_data_file": "gst_data_previous.json",
+  "email": {
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "use_tls": true,
+    "from": "",
+    "password": "",
+    "to": ""
+  },
+  "webhook": {
+    "url": "",
+    "enabled": false
+  },
+  "schedules": {
+    "daily_extraction": {
+      "enabled": true,
+      "hour": 3,
+      "minute": 0,
+      "description": "Daily GST data extraction at 3 AM"
+    },
+    "weekly_comprehensive": {
+      "enabled": true,
+      "day_of_week": "sun",
+      "hour": 2,
+      "minute": 0,
+      "description": "Weekly comprehensive update on Sunday 2 AM"
+    },
+    "hourly_health_check": {
+      "enabled": true,
+      "description": "Hourly health check"
+    },
+    "daily_backup": {
+      "enabled": true,
+      "hour": 4,
+      "minute": 0,
+      "description": "Daily backup at 4 AM"
+    },
+    "weekly_cleanup": {
+      "enabled": true,
+      "day_of_week": "mon",
+      "hour": 1,
+      "minute": 0,
+      "description": "Weekly cleanup on Monday 1 AM"
+    }
+  },
+  "notifications": {
+    "on_change": true,
+    "on_error": true,
+    "on_success": false
+  }
+}

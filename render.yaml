@@ -14,3 +14,28 @@ services:
       - key: ALLOWED_ORIGINS
         value: "*"
     healthCheckPath: /
+
+  - type: worker
+    name: gst-scheduler
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python gst_scheduler.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.10"
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: SCHEDULER_EMAIL_HOST
+        value: "smtp.gmail.com"
+      - key: SCHEDULER_EMAIL_PORT
+        value: "587"
+      - key: SCHEDULER_EMAIL_FROM
+        sync: false
+      - key: SCHEDULER_EMAIL_PASSWORD
+        sync: false
+      - key: SCHEDULER_EMAIL_TO
+        sync: false
+      - key: SCHEDULER_WEBHOOK_URL
+        sync: false
