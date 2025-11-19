@@ -16,7 +16,8 @@ function BillAnalyzer({ result }) {
     correct_calculation,
     discrepancy,
     confidence_score,
-    warnings = []
+    warnings = [],
+    extraction_debug
   } = result;
 
   // Calculate confidence percentage and color
@@ -329,6 +330,37 @@ function BillAnalyzer({ result }) {
           Download JSON
         </button>
       </div>
+
+      {/* Extraction Debug Info */}
+      {extraction_debug && (
+        <details style={{
+          marginTop: '20px',
+          padding: '15px',
+          background: '#f8f9fa',
+          border: '1px solid #ddd',
+          borderRadius: '8px'
+        }}>
+          <summary style={{ cursor: 'pointer', fontWeight: 'bold', marginBottom: '10px' }}>
+            🔍 Debug: What Gemini Extracted vs Our Calculations
+          </summary>
+          <div style={{ marginTop: '15px', fontSize: '0.9rem' }}>
+            <h4 style={{ margin: '10px 0 5px 0' }}>What Gemini Read from Bill:</h4>
+            <pre style={{ background: '#fff', padding: '10px', borderRadius: '5px', overflow: 'auto' }}>
+              {JSON.stringify(extraction_debug.gemini_extracted, null, 2)}
+            </pre>
+
+            <h4 style={{ margin: '15px 0 5px 0' }}>Our Calculated Values:</h4>
+            <pre style={{ background: '#fff', padding: '10px', borderRadius: '5px', overflow: 'auto' }}>
+              {JSON.stringify(extraction_debug.calculated_values, null, 2)}
+            </pre>
+
+            <p style={{ marginTop: '10px', color: '#666', fontStyle: 'italic' }}>
+              💡 Tip: If these values differ significantly, the bill image/PDF quality might be poor,
+              or the bill itself has calculation errors.
+            </p>
+          </div>
+        </details>
+      )}
     </div>
   );
 }

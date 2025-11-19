@@ -83,6 +83,7 @@ class BillAnalysisResult:
     gross_amount: float = 0.0
     discount: float = 0.0
     gstin: Optional[str] = None
+    extraction_debug: Dict = None  # Debug info showing what was extracted
 
     def to_dict(self):
         result = {
@@ -112,7 +113,8 @@ class BillAnalysisResult:
                 'details': self.discrepancy_details or []
             },
             'confidence_score': self.confidence_score,
-            'warnings': self.warnings or []
+            'warnings': self.warnings or [],
+            'extraction_debug': self.extraction_debug  # Add debug info
         }
         return result
 
@@ -579,7 +581,28 @@ You are an expert Indian tax accountant analyzing bills/invoices for GST complia
             warnings=validation_warnings
         )
 
+        # Add extraction debug info for transparency
+        result.extraction_debug = {
+            'gemini_extracted': {
+                'gross_amount': gemini_result.get('total_before_tax'),
+                'discount': gemini_result.get('discount_amount'),
+                'subtotal': gemini_result.get('subtotal'),
+                'cgst': gemini_result.get('cgst_charged'),
+                'sgst': gemini_result.get('sgst_charged'),
+                'total_gst': gemini_result.get('total_gst_charged'),
+                'grand_total': gemini_result.get('grand_total')
+            },
+            'calculated_values': {
+                'items_sum': sum(item.total_price for item in items),
+                'subtotal_after_discount': subtotal,
+                'calculated_gst': calculated_gst,
+                'calculated_total': calculated_total
+            }
+        }
+
         logger.info(f"Analysis complete. Discrepancy: {has_discrepancy}")
+        logger.info(f"Extracted: {result.extraction_debug['gemini_extracted']}")
+        logger.info(f"Calculated: {result.extraction_debug['calculated_values']}")
         return result
 
     def print_analysis(self, result: BillAnalysisResult):
