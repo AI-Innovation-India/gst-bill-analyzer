@@ -331,8 +331,8 @@ function BillAnalyzer({ result }) {
         </button>
       </div>
 
-      {/* Extraction Debug Info */}
-      {extraction_debug && (
+      {/* Extraction Debug Info - Hidden by default, enable via VITE_DEBUG_MODE=true */}
+      {extraction_debug && import.meta.env.VITE_DEBUG_MODE === 'true' && (
         <details style={{
           marginTop: '20px',
           padding: '15px',
