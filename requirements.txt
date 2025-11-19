@@ -12,8 +12,12 @@ python-multipart==0.0.6
 # Google Gemini AI (requires Python 3.11, fails on 3.13)
 google-generativeai==0.3.2
 
-# PDF extraction
+# PDF extraction (pdfplumber works with Python 3.11)
 PyPDF2==3.0.1
+pdfplumber==0.10.3
+
+# Image processing (Pillow 10.0.0 has wheels for Python 3.11)
+Pillow==10.0.0
 
 # Validation (v2 needs Python 3.11)
 pydantic==2.5.2

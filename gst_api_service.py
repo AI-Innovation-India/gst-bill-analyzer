@@ -829,43 +829,21 @@ async def analyze_bill_file(file: UploadFile = File(...)):
                 detail="Google API key not configured. Set GOOGLE_API_KEY environment variable."
             )
 
-        # Read file content
-        content = await file.read()
-
-        # Use Gemini File API to upload and analyze directly
-        import google.generativeai as genai
-        genai.configure(api_key=api_key)
-
-        # Save temporarily for Gemini upload
+        # Save uploaded file temporarily
         import tempfile
+        content = await file.read()
         with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(filename)[1]) as tmp_file:
             tmp_file.write(content)
             tmp_file_path = tmp_file.name
 
         try:
-            # Upload file to Gemini
-            uploaded_file = genai.upload_file(tmp_file_path, mime_type=file.content_type)
-
-            # Use Gemini to extract text from the file
-            model = genai.GenerativeModel('gemini-1.5-flash')
-
-            extraction_prompt = """Extract ALL text from this bill/receipt/invoice EXACTLY as shown.
-Include:
-- Store/restaurant name and address
-- Bill number and date
-- ALL items with their names, quantities, and prices
-- Subtotal, taxes (GST/CGST/SGST/IGST), service charges, discounts
-- Final total amount
-- Any other visible text
-
-Return the complete extracted text."""
-
-            response = model.generate_content([extraction_prompt, uploaded_file])
-            bill_text = response.text
-
-            # Now analyze the extracted text
+            # Analyze the file using GeminiGSTAnalyzer
             analyzer = GeminiGSTAnalyzer(api_key=api_key, db_path='gst_data.db')
-            result = analyzer.analyze_bill(bill_text=bill_text)
+
+            if filename.endswith('.pdf'):
+                result = analyzer.analyze_bill(pdf_path=tmp_file_path)
+            else:  # Image file
+                result = analyzer.analyze_bill(image_path=tmp_file_path)
 
             # Return the analysis as dict
             return result.to_dict()
