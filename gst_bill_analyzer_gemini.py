@@ -21,12 +21,13 @@ import google.generativeai as genai
 try:
     import pdfplumber
     from PIL import Image
-    import pytesseract
     PDF_AVAILABLE = True
 except ImportError:
     PDF_AVAILABLE = False
-    print("Note: pdfplumber, PIL, and pytesseract not installed. Install for PDF/image support:")
-    print("pip install pdfplumber Pillow pytesseract")
+    pdfplumber = None
+    Image = None
+    print("Note: pdfplumber and PIL not installed. Install for PDF/image support:")
+    print("pip install pdfplumber Pillow")
 
 import logging
 
@@ -190,13 +191,24 @@ class GeminiGSTAnalyzer:
         return response.text
 
     def extract_text_from_image(self, image_path: str) -> str:
-        """Extract text from image using OCR"""
+        """Extract text from image using Gemini Vision"""
         if not PDF_AVAILABLE:
-            raise ImportError("Image support not available. Install: pip install Pillow pytesseract")
+            raise ImportError("Image support not available. Install: pip install Pillow")
 
+        # Use Gemini Vision to extract text from image
         image = Image.open(image_path)
-        text = pytesseract.image_to_string(image)
-        return text
+
+        prompt = """Extract ALL text from this bill/invoice/receipt image EXACTLY as shown.
+Include:
+- Store/restaurant name
+- Bill number and date
+- ALL items with quantities and prices
+- Subtotal, taxes, discounts, total
+
+Return the complete text."""
+
+        response = self.model.generate_content([prompt, image])
+        return response.text
 
     def analyze_bill_with_gemini(self, bill_text: str) -> Dict:
         """
