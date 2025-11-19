@@ -3,7 +3,8 @@
  * Connects React frontend to FastAPI backend
  */
 
-const API_BASE_URL = 'http://127.0.0.1:8001';
+// Use environment variable for production, fallback to localhost for development
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://gst-analyzer-api.onrender.com';
 
 /**
  * Analyze a bill using Gemini AI
