@@ -118,25 +118,11 @@ Thank you! Visit again!`;
     }
 
     setSelectedFile(file);
-    setLoading(true);
-    setError(null);
+    setError('📝 File upload is temporarily unavailable in production.\n\nPlease use:\n• "Sample Bill" button to test the analyzer\n• Or manually type/paste your bill text\n\nFile upload will be enabled soon!');
 
-    try {
-      const result = await analyzeBillFile(file);
-      console.log('API Response:', result);
-
-      // Format and populate textarea with extracted bill data
-      const formattedBill = formatApiResponse(result);
-      setBillText(formattedBill);
-
-      // Pass result to parent for analysis display
-      onAnalysisComplete(result);
-    } catch (err) {
-      setError(err.message || 'Failed to analyze file. Please try again.');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+    // Clear file selection
+    event.target.value = '';
+    setSelectedFile(null);
   };
 
   const useSampleBill = () => {
