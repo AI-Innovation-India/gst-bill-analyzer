@@ -102,35 +102,35 @@ class GSTSlabEnum(str, Enum):
 
 
 class GSTItemResponse(BaseModel):
-    hsn_code: Optional[str]
-    sac_code: Optional[str]
+    id: Optional[int] = None
+    hsn_code: Optional[str] = None
+    sac_code: Optional[str] = None
     item_name: str
-    item_category: str
-    description: Optional[str]
+    item_category: Optional[str] = None
     gst_rate: float
-    cgst_rate: Optional[float]
-    sgst_rate: Optional[float]
-    igst_rate: Optional[float]
-    previous_rate: Optional[float]
-    effective_date: Optional[str]
-    chapter: Optional[str]
-    exemptions: Optional[str]
-    conditions: Optional[str]
-    last_updated: Optional[str]
+    cgst_rate: Optional[float] = None
+    sgst_rate: Optional[float] = None
+    igst_rate: Optional[float] = None
+    cess_rate: Optional[float] = 0.0
+    effective_from: Optional[str] = None
+    remarks: Optional[str] = None
+    created_at: Optional[str] = None
+    updated_at: Optional[str] = None
 
     class Config:
+        from_attributes = True
         json_schema_extra = {
             "example": {
                 "hsn_code": "0713",
                 "sac_code": None,
                 "item_name": "Pulses (Dried leguminous vegetables)",
                 "item_category": "Vegetable Products",
-                "description": "Dried leguminous vegetables, shelled",
-                "gst_rate": 0.0,
-                "cgst_rate": 0.0,
-                "sgst_rate": 0.0,
-                "igst_rate": 0.0,
-                "previous_rate": 0.0,
+                "remarks": "Dried leguminous vegetables, shelled",
+                "gst_rate": 5.0,
+                "cgst_rate": 2.5,
+                "sgst_rate": 2.5,
+                "igst_rate": 5.0,
+                "cess_rate": 0.0,
                 "effective_date": "2025-09-22",
                 "chapter": "07",
                 "exemptions": "Essential food items",
@@ -684,7 +684,10 @@ async def get_all_items():
     cursor = conn.cursor()
     # Sort to show items WITH HSN/SAC codes first, then by GST rate
     cursor.execute("""
-        SELECT * FROM gst_items
+        SELECT id, hsn_code, sac_code, item_name, item_category,
+               gst_rate, cgst_rate, sgst_rate, igst_rate, cess_rate,
+               effective_from, remarks, created_at, updated_at
+        FROM gst_items
         ORDER BY
             CASE
                 WHEN hsn_code IS NOT NULL OR sac_code IS NOT NULL THEN 0
@@ -696,7 +699,27 @@ async def get_all_items():
     """)
     rows = cursor.fetchall()
     conn.close()
-    return [dict(row) for row in rows]
+
+    # Convert Row objects to dicts
+    items = []
+    for row in rows:
+        items.append({
+            'id': row[0],
+            'hsn_code': row[1],
+            'sac_code': row[2],
+            'item_name': row[3],
+            'item_category': row[4],
+            'gst_rate': row[5],
+            'cgst_rate': row[6],
+            'sgst_rate': row[7],
+            'igst_rate': row[8],
+            'cess_rate': row[9],
+            'effective_from': row[10],
+            'remarks': row[11],
+            'created_at': row[12],
+            'updated_at': row[13]
+        })
+    return items
 
 
 @app.get("/gst/search/{query}", response_model=List[GSTItemResponse])
